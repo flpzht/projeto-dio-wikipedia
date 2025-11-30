@@ -1,0 +1,152 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fff8dc;
+}
+ul { list-style: none; padding-left: 5px; }
+a { color:lightsalmon; text-decoration: none;}
+
+/* ---------------------
+    HEADER
+------------------------*/
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 1rem;
+    border-bottom: 1px solid #f1cf85;
+    background-color: #333;
+    max-width: 100%;
+    margin: auto;
+}
+.logo {
+    width: 100%;
+    height: auto;
+    text-align: left;
+    margin: 0;
+}
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: #f1cf85;
+    margin: 0;
+}
+
+/* ------Barra abaixo do header------*/
+
+.bar {
+    background-color: #fbbc92;
+    width: 100%;
+    height: 15px;
+}
+
+/* ---------------------
+    CONTENT
+------------------------*/
+
+.content {
+   max-width: 1400px;
+    margin: auto;
+    display: grid;
+    gap: 3rem;
+    grid-template-areas: 
+        "sidebar main anchors";
+    grid-template-columns: 15rem 1fr 15rem;
+    padding: 1rem;
+}
+
+/* -------Sidebar Esquerda--------*/
+.sidebar {
+    grid-area: sidebar;
+    border-right: solid 1px #f1cf85;
+    padding-right: 15px;
+}
+/* -------Conteúdo principal--------*/
+.main {
+    grid-area: main;
+}
+
+/* -------Sidebar Direita--------*/
+.anchors {
+    grid-area: anchors;
+    border-left: solid 1px #f1cf85;
+    padding-left: 15px;
+}
+
+/* -------Subtitúlos--------*/
+.subtitle {
+    text-decoration: underline;
+}
+
+/* ---------------------
+    FIGURES / ESCUDO
+------------------------*/
+.escudo {
+    text-align: center;
+    margin: 2rem 0;
+}
+.escudo img {
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* ---------------------
+    FOOTER
+------------------------*/
+.footer {
+    text-align: center;
+    padding: 3px 0;
+    background-color: #fbbc92;
+    color: #333;
+    margin-top: 10px;
+}
+.footer p {
+    margin: 10px;
+}
+
+/* --------------------------
+   RESPONSIVIDADE
+--------------------------- */
+@media (max-width: 900px) {
+    .content {
+        grid-template-areas:
+            "sidebar"
+            "main"
+            "anchors";
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar,
+    .anchors {
+        border: none;
+        padding: 0;
+    }
+
+    .title {
+        position: static;
+        transform: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header {
+        justify-content: center;
+    }
+
+    .logo {
+        display: none; /* esconde o logo no mobile para não quebrar o header */
+    }
+}
+
+@media (max-width: 600px) {
+    .escudo img {
+        width: 120px;
+    }
+}
